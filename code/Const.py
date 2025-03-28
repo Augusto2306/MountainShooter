@@ -128,10 +128,10 @@ PLAYER_KEY_SHOOT = {'Player1': pygame.K_RALT,
                     'Player2': pygame.K_LSHIFT}
 
 #  S
-SPAWN_TIME = 4000
+SPAWN_TIME = 2000
 
 TIMEOUT_STEP = 100  #100ms
-TIMEOUT_LEVEL = 20000  #20s
+TIMEOUT_LEVEL = 40000  #20s
 
 #  W
 WIN_WIDTH = 576
