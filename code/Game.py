@@ -1,5 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+import sys
+
 import pygame
 
 from code.Const import WIN_WIDTH, WIN_HEIGHT, MENU_OPTION
@@ -14,14 +16,14 @@ class Game:
         self.window = pygame.display.set_mode(size=(WIN_WIDTH, WIN_HEIGHT))
         pygame.display.set_caption("Mountain Shooter")
 
-    def run(self, ):
+    def run(self):
         while True:
             score = Score(self.window)
             menu = Menu(self.window)
             menu_return = menu.run()
 
             if menu_return in [MENU_OPTION[0], MENU_OPTION[1], MENU_OPTION[2]]:
-                player_score = [0, 0] # [Player1, Player2]
+                player_score = [0, 0]  # [Player1, Player2]
                 level = Level(self.window, 'Level1', menu_return, player_score)
                 level_return = level.run(player_score)
                 if level_return:
@@ -37,4 +39,5 @@ class Game:
                 pygame.quit()  # Close Window
                 quit()  # End Pygame
             else:
-                pass
+                pygame.quit()
+                sys.exit()

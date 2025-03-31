@@ -17,7 +17,7 @@ from code.Player import Player
 
 
 class Level:
-    def __init__(self, window:Surface, name: str, game_mode: str, player_score: list[int]):
+    def __init__(self, window: Surface, name: str, game_mode: str, player_score: list[int]):
         self.timeout = TIMEOUT_LEVEL
         self.window = window
         self.name = name
@@ -85,8 +85,6 @@ class Level:
             #  Collisions
             EntityMediator.verify_collision(entity_list=self.entity_list)
             EntityMediator.verify_health(entity_list=self.entity_list)
-
-
 
     def level_text(self, text_size: int, text: str, text_color: tuple, text_pos: tuple):
         text_font: Font = pygame.font.SysFont(name="Lucida Sans Typewriter", size=text_size)
